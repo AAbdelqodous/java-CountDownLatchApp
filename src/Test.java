@@ -11,10 +11,9 @@ public class Test {
         service.submit(new DependentService(latch));
         service.submit(new DependentService(latch));
 
-        latch.await();
-
-        service.close();
+        latch.await(); // main thread will wait until all the above three threads are initialized
 
         System.out.println("All dependent services initialized..");
+        service.close();
     }
 }

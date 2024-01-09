@@ -10,6 +10,6 @@ public class DependentService implements Runnable {
     public void run() {
         System.out.println("Connecting to database from thread: " +Thread.currentThread().getName());
         latch.countDown();
-        System.out.println("Done!");
+        System.out.println("Done.. ");
     }
 }
